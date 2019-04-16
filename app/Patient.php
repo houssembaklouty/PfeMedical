@@ -69,4 +69,19 @@ class Patient extends Authenticatable
         return $this->belongsTo('App\Medecin');
     }
 
+    public function capteurs() 
+    {
+        return $this->hasMany('App\Capteur');
+    }
+
+    public function dossier() 
+    {
+        return $this->belongsTo('App\Dossier');
+    }
+
+    public function ordonnance() 
+    {
+        return $this->hasMany('App\Ordonnance', 'patient_id');
+    }
+
 }

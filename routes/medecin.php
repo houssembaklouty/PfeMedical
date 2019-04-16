@@ -25,4 +25,9 @@ Route::group(['namespace' => 'Medecin'], function() {
     // Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('medecin.verification.verify');
 
     Route::resource('patients', 'MedecinPatientsController');
+    Route::resource('capteurs', 'MedecinCapteursController');
+    Route::resource('ordonnance', 'MedecinOrdonnanceController');
+    
+    Route::resource('dossier', 'MedecinDossierController');
+    Route::get('patient/dossier/{patient}', 'MedecinDossierController@patient_dossier')->name('dossier.patient.show');
 });

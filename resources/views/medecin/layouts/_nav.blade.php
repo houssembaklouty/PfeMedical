@@ -11,13 +11,13 @@
       <!-- User Account: style can be found in dropdown.less -->
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <img src="assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+          <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
           <span class="hidden-xs">{{ Auth::guard('medecin')->user()->name }}</span>
         </a>
         <ul class="dropdown-menu">
           <!-- User image -->
           <li class="user-header">
-            <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
             <p>
               {{ Auth::guard('medecin')->user()->name }}
@@ -30,15 +30,21 @@
               <a href="#" class="btn btn-default btn-flat">Profile</a>
             </div>
             <div class="pull-right">
-              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+              <a class="dropdown-item btn btn-default btn-flat" href="{{ route('medecin.logout') }}"
+                 onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+              </a>
+
+              <form id="logout-form" action="{{ route('medecin.logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
             </div>
+
           </li>
         </ul>
       </li>
       <!-- Control Sidebar Toggle Button -->
-      <li>
-        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-      </li>
     </ul>
   </div>
 

@@ -20,7 +20,9 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">All Patients</h3>
+          <h3 class="box-title">Dossier de : {{ $patient->first_name }} {{ $patient->last_name }}</h3>
+
+          <a href="{{ route('ordennance.create') }}" class="btn btn-success pull-right">NV. Ordennance</a>
 
         </div>
         <!-- /.box-header -->
@@ -36,16 +38,16 @@
               <th></th>
             </tr>
 
-			@foreach($patients as $patient)
+			@foreach($patient_dossier as $dossier)
             <tr>
-              <td>{{ $patient->id }}</td>
-              <td>{{ $patient->first_name }}</td>
-              <td>{{ $patient->last_name }}</td>
-              <td>{{ $patient->email }}</td>
-              <td>{{ $patient->address }}</td>
-              <td>{{ $patient->created_at }}</td>
+              <td>{{ $dossier->id }}</td>
+              <td>{{ $dossier->first_name }}</td>
+              <td>{{ $dossier->last_name }}</td>
+              <td>{{ $dossier->email }}</td>
+              <td>{{ $dossier->address }}</td>
+              <td>{{ $dossier->created_at }}</td>
               <th>
-                <a href="{{ route('dossier.show', $patient->id) }}" class="btn btn-info btn-sm">Dossier</a>
+                <a href="#" class="btn btn-info btn-sm">Ordannance(s)</a>
               </th>
             </tr>
             @endforeach
@@ -56,7 +58,7 @@
         <!-- /.box-body -->
         <div class="box-footer clearfix">
           <div class="pagination pagination-sm no-margin pull-right">
-          	{{ $links }}
+          	
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
         <p>{{ Auth::guard('medecin')->user()->name }}</p>
@@ -14,7 +14,7 @@
     <!-- search form -->
     <form action="#" method="get" class="sidebar-form">
       <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search...">
+        <input type="text" name="q" class="form-control" placeholder="Recherche...">
         <span class="input-group-btn">
               <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                 <i class="fa fa-search"></i>
@@ -38,6 +38,33 @@
           <li><a href="{{ route('patients.create') }}"><i class="fa fa-circle-o"></i> Ajouter patient</a></li>
         </ul>
       </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-thermometer-half"></i> <span>Capteurs</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('capteurs.index') }}"><i class="fa fa-circle-o"></i>All capteurs</a></li>
+          <li><a href="{{ route('capteurs.create') }}"><i class="fa fa-circle-o"></i> Ajouter capteurs</a></li>
+        </ul>
+      </li>
+
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-list-alt"></i> <span>Ordonnance</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('ordonnance.index') }}"><i class="fa fa-circle-o"></i>All ordonnance</a></li>
+        </ul>
+      </li>
+
+
     </ul>
   </section>
   <!-- /.sidebar -->

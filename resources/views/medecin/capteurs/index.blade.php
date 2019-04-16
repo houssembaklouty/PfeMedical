@@ -28,25 +28,15 @@
           <table class="table table-bordered">
             <tr>
               <th style="width: 10px">#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Address</th>
+              <th>TYPE</th>
               <th>Created_at</th>
-              <th></th>
             </tr>
 
-			@foreach($patients as $patient)
+			@foreach($capteurs as $capteur)
             <tr>
-              <td>{{ $patient->id }}</td>
-              <td>{{ $patient->first_name }}</td>
-              <td>{{ $patient->last_name }}</td>
-              <td>{{ $patient->email }}</td>
-              <td>{{ $patient->address }}</td>
-              <td>{{ $patient->created_at }}</td>
-              <th>
-                <a href="{{ route('dossier.show', $patient->id) }}" class="btn btn-info btn-sm">Dossier</a>
-              </th>
+              <td>{{ $capteur->id }}</td>
+              <td>{{ $capteur->type }}</td>
+              <td>{{ $capteur->created_at }}</td>
             </tr>
             @endforeach
 
