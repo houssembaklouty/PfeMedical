@@ -15,7 +15,8 @@ class CreateRendezVousesTable extends Migration
     {
         Schema::create('rendez_vouses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('etat');
+            $table->date('date'); 
+            $table->time('temps');
 
             $table->unsignedBigInteger('patient_id');
             $table->foreign('patient_id')

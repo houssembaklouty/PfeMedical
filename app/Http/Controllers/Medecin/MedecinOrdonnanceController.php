@@ -46,7 +46,7 @@ class MedecinOrdonnanceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {        
         $this->validate($request,[
             'user' => ['required', 'numeric', 'max:5'],
             'description' => ['required'],

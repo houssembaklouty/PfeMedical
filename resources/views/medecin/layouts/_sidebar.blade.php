@@ -64,6 +64,19 @@
         </ul>
       </li>
 
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-dashboard"></i> <span>Rendez-vous</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{ route('rdv.index') }}"><i class="fa fa-circle-o"></i> Historique des Rendez-vous</a></li>
+          <li><a href="{{ route('rdv.create') }}"><i class="fa fa-circle-o"></i> Prenez Rendez-vous</a></li>
+        </ul>
+      </li>
+
 
     </ul>
   </section>

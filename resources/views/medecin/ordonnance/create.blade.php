@@ -43,9 +43,9 @@
 	                </select>
 	              </div>
 
-	              @if ($errors->has('first_name'))
+	              @if ($errors->has('user'))
 	                  <span class="invalid-feedback" role="alert">
-	                      <strong>{{ $errors->first('first_name') }}</strong>
+	                      <strong>{{ $errors->first('user') }}</strong>
 	                  </span>
 	              @endif
 

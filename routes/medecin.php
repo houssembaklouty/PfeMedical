@@ -27,6 +27,7 @@ Route::group(['namespace' => 'Medecin'], function() {
     Route::resource('patients', 'MedecinPatientsController');
     Route::resource('capteurs', 'MedecinCapteursController');
     Route::resource('ordonnance', 'MedecinOrdonnanceController');
+    Route::resource('rdv', 'MedecinRdvController');
     
     Route::resource('dossier', 'MedecinDossierController');
     Route::get('patient/dossier/{patient}', 'MedecinDossierController@patient_dossier')->name('dossier.patient.show');
